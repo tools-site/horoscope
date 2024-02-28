@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星座运势查询</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>星座运势查询</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="horoscope-card">
+                <h2>今日星座运势</h2>
+                <label for="sign">选择星座：</label>
+                <select id="sign">
+                    <option value="Aries">白羊座</option>
+                    <option value="Taurus">金牛座</option>
+                    <option value="Gemini">双子座</option>
+                    <option value="Cancer">巨蟹座</option>
+                    <option value="Leo">狮子座</option>
+                    <option value="Virgo">处女座</option>
+                    <option value="Libra">天秤座</option>
+                    <option value="Scorpio">天蝎座</option>
+                    <option value="Sagittarius">射手座</option>
+                    <option value="Capricorn">摩羯座</option>
+                    <option value="Aquarius">水瓶座</option>
+                    <option value="Pisces">双鱼座</option>
+                </select>
+                <button onclick="getHoroscope()">查询</button>
+                <div id="horoscopeResult" class="horoscope-result"></div>
+                <div id="dateRange" class="date-range"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 星座运势查询</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
