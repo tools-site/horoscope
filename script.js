@@ -17,14 +17,38 @@ async function getHoroscope() {
   const sign = document.getElementById("sign").value;
   const horoscopeResult = document.getElementById("horoscopeResult");
   const dateRange = document.getElementById("dateRange");
-  const apiUrl = `http://web.juhe.cn:8080/constellation/getAll?consName=${sign}&type=today&key=360bd0afcae3e55a9ef02322cb5faa34`;
+  const apiUrl = `https://tools-site.github.io/horoscope/raw/${dateFormat(new Date(), "YYYmmdd")}.json`;
   try {
     const response = await fetch(apiUrl);
-    const data = await response.json();
-    horoscopeResult.textContent = `今日${sign}的运势：${data.summary}`;
+    const datas = await response.json();
+    const todayDatas = datas.today;
+    const sinData = todayDatas[sign]
+    horoscopeResult.textContent = `今日${sign}的运势：${sinData.summary}`;
     dateRange.textContent = `星座日期范围：${signDateRanges[sign]}`;
   } catch (e) {
     console.error("获取运势失败:", error);
     horoscopeResult.textContent = "获取运势失败，请稍后再试。";
   }
+}
+
+function dateFormat(date, fmt) {
+  let ret;
+  const opt = {
+    "Y+": date.getFullYear().toString(),
+    "m+": (date.getMonth() + 1).toString(),
+    "d+": date.getDate().toString(),
+    "H+": date.getHours().toString(),
+    "M+": date.getMinutes().toString(),
+    "S+": date.getSeconds().toString(),
+  };
+  for (let k in opt) {
+    ret = new RegExp("(" + k + ")").exec(fmt);
+    if (ret) {
+      fmt = fmt.replace(
+        ret[1],
+        ret[1].length == 1 ? opt[k] : opt[k].padStart(ret[1].length, "0")
+      );
+    }
+  }
+  return fmt;
 }
