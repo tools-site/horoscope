@@ -1,71 +1,65 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>星座运势查询</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
-  </head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQ7MREJKYY"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QQ7MREJKYY');
-  </script>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="https://tools-site.github.io/horoscope/">首页</a></li>
-          <li><a href="https://tools-site.github.io/">导航网址</a></li>
-          <li><a href="#policy">隐私政策</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <div class="card">
-        <h1>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-star"
-          >
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-            />
-          </svg>
-          星座运势查询
-        </h1>
-        <p class="description">选择您的星座，查看今日、明日和本周运势</p>
-        <div class="zodiac-grid" id="zodiacGrid"></div>
-        <div
-          class="selected-zodiac"
-          id="selectedZodiac"
-          style="display: none"
-        ></div>
-        <div class="fortune-section" id="fortuneSection" style="display: none">
-          <div class="tab-buttons">
-            <button class="tab-button active" data-tab="today">今日运势</button>
-            <button class="tab-button" data-tab="tomorrow">明日运势</button>
-            <button class="tab-button" data-tab="week">本周运势</button>
-          </div>
-          <pre class="fortune-content" id="fortuneContent" ></pre>
-        </div>
-      </div>
-    </main>
 
-    <footer>
-      <p>&copy; 2024 星座运势查询. 保留所有权利。</p>
-    </footer>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta name="keywords" content="星座运势查询,星座运势,星座">
+  <meta name="description" content="星座运势查询，带你了解每个星座的今日运势，明日运势和本周运势。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tools-site.github.io/horoscope/">
+  <title>星座运势查询</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QQ7MREJKYY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-QQ7MREJKYY');
+</script>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="https://tools-site.github.io/horoscope/">首页</a></li>
+        <li><a href="https://tools-site.github.io/">导航网址</a></li>
+        <li><a href="#policy">隐私政策</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="card">
+      <h1>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-star">
+          <polygon
+            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+        星座运势查询
+      </h1>
+      <p class="description">选择您的星座，查看今日、明日和本周运势</p>
+      <div class="zodiac-grid" id="zodiacGrid"></div>
+      <div class="selected-zodiac" id="selectedZodiac" style="display: none"></div>
+      <div class="fortune-section" id="fortuneSection" style="display: none">
+        <div class="tab-buttons">
+          <button class="tab-button active" data-tab="today">今日运势</button>
+          <button class="tab-button" data-tab="tomorrow">明日运势</button>
+          <button class="tab-button" data-tab="week">本周运势</button>
+        </div>
+        <pre class="fortune-content" id="fortuneContent"></pre>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 星座运势查询. 保留所有权利。</p>
+  </footer>
+</body>
+
 </html>
