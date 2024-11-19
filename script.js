@@ -145,7 +145,7 @@ async function showFortune(type, signName) {
     let health = `健康： ${signData["health"]}`;
     let work = `事业： ${signData["work"]}`;
     let love = `爱情： ${signData["love"]}`;
-    let money = `财富 ${signData["money"]}`;
+    let money = `财富： ${signData["money"]}`;
     summary = `${health}\n${work}\n${love}\n${money}`;
   }
   content.textContent = summary;
