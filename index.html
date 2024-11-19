@@ -1,43 +1,62 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-Hans">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>星座运势查询</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
     <header>
-        <h1>星座运势查询</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">首页</a></li>
+          <li><a href="#policy">隐私政策</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <div class="container">
-            <div class="horoscope-card">
-                <h2>今日星座运势</h2>
-                <label for="sign">选择星座：</label>
-                <select id="sign">
-                    <option value="白羊座">白羊座</option>
-                    <option value="金牛座">金牛座</option>
-                    <option value="双子座">双子座</option>
-                    <option value="巨蟹座">巨蟹座</option>
-                    <option value="狮子座">狮子座</option>
-                    <option value="处女座">处女座</option>
-                    <option value="天秤座">天秤座</option>
-                    <option value="天蝎座">天蝎座</option>
-                    <option value="射手座">射手座</option>
-                    <option value="摩羯座">摩羯座</option>
-                    <option value="水瓶座">水瓶座</option>
-                    <option value="双鱼座">双鱼座</option>
-                </select>
-                <button onclick="getHoroscope()">查询</button>
-                <div id="horoscopeResult" class="horoscope-result"></div>
-                <div id="dateRange" class="date-range"></div>
-            </div>
+      <div class="card">
+        <h1>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-star"
+          >
+            <polygon
+              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+            />
+          </svg>
+          星座运势查询
+        </h1>
+        <p class="description">选择您的星座，查看今日、明日和本周运势</p>
+        <div class="zodiac-grid" id="zodiacGrid"></div>
+        <div
+          class="selected-zodiac"
+          id="selectedZodiac"
+          style="display: none"
+        ></div>
+        <div class="fortune-section" id="fortuneSection" style="display: none">
+          <div class="tab-buttons">
+            <button class="tab-button active" data-tab="today">今日运势</button>
+            <button class="tab-button" data-tab="tomorrow">明日运势</button>
+            <button class="tab-button" data-tab="week">本周运势</button>
+          </div>
+          <pre class="fortune-content" id="fortuneContent" ></pre>
         </div>
+      </div>
     </main>
+
     <footer>
-        <p>&copy; 2024 星座运势查询</p>
+      <p>&copy; 2024 星座运势查询. 保留所有权利。</p>
     </footer>
-    <script src="script.js"></script>
-</body>
+  </body>
 </html>
