@@ -142,10 +142,10 @@ async function showFortune(type, signName) {
   const signData = horoscopeData?.[type]?.[signName];
   let summary = signData?.["summary"] ?? "暂无数据";
   if (type === "week") {
-    let health = `健康： ${signData["health"]}`;
-    let work = `事业： ${signData["work"]}`;
-    let love = `爱情： ${signData["love"]}`;
-    let money = `财富： ${signData["money"]}`;
+    let health = `健康： ${signData?.["health"] ?? "暂无数据"}`;
+    let work = `事业： ${signData?.["work"] ?? "暂无数据"}`;
+    let love = `爱情： ${signData?.["love"] ?? "暂无数据"}`;
+    let money = `财富： ${signData?.["money"] ?? "暂无数据"}`;
     summary = `${health}\n${work}\n${love}\n${money}`;
   }
   content.textContent = summary;
