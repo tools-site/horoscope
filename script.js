@@ -140,7 +140,7 @@ async function showFortune(type, signName) {
   const content = document.getElementById("fortuneContent");
   const horoscopeData = await getHoroscope();
   const signData = horoscopeData?.[type]?.[signName];
-  let summary = signData["summary"];
+  let summary = signData?.["summary"] ?? "暂无数据";
   if (type === "week") {
     let health = `健康： ${signData["health"]}`;
     let work = `事业： ${signData["work"]}`;
